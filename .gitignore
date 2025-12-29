@@ -1,3 +1,6 @@
+# SOA Info documents (not to be shared)
+SOA_Info/
+
 # Python
 __pycache__/
 *.py[cod]
