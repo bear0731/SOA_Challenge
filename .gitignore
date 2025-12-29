@@ -51,12 +51,8 @@ Thumbs.db
 # Data files (large files)
 data/*.txt
 data/*.csv
-data/*.xlsx
+# Keep the appendices xlsx
 !data/ilec-mort-appendices.xlsx
-
-# Keep plots directory but ignore contents
-data/plots/*
-!data/plots/.gitkeep
 
 # Logs
 *.log
