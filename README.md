@@ -21,6 +21,13 @@ Key visualizations:
 
 ---
 
+### DAG Causal Analysis
+Directed Acyclic Graph (DAG) analysis exploring causal relationships in mortality data.
+
+📄 **[DAG Analysis Report](data/report/ilec_dag_analysis.md)**
+
+---
+
 ### Comprehensive EDA (Main Dataset)
 Detailed EDA on the full ILEC 2012-2019 dataset using Jupyter Notebook.
 
