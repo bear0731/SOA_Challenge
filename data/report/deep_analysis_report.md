@@ -2,12 +2,12 @@
 
 ## Key Visualizations Generated
 
-1. `group2_overall_ae_ratios.png` - Overall A/E by Age, Duration, Face Amount
-2. `group2_exposure_distribution.png` - Exposure distribution
-3. `group3_ae_trends_by_segment.png` - A/E trends by Sex/Smoker segment
-4. `group3_segment_comparison.png` - Cross-segment comparison
-5. `group4_ae_heatmaps.png` - Issue Age x Duration heatmaps
-6. `group7_older_ages.png` - Older age experience
+1. ![Overall A/E](../plots/group2_overall_ae_ratios.png)
+2. ![Exposure Distribution](../plots/group2_exposure_distribution.png)
+3. ![A/E Trends by Segment](../plots/group3_ae_trends_by_segment.png)
+4. ![Segment Comparison](../plots/group3_segment_comparison.png)
+5. ![Issue Age x Duration Heatmaps](../plots/group4_ae_heatmaps.png)
+6. ![Older Age Experience](../plots/group7_older_ages.png)
 
 ## Key Insights
 
