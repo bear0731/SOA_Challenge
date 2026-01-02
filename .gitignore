@@ -51,6 +51,8 @@ Thumbs.db
 # Data files (large files)
 data/*.txt
 data/*.csv
+data/*.parquet
+data/*.xlsx
 # Keep the appendices xlsx
 !data/ilec-mort-appendices.xlsx
 
@@ -60,3 +62,6 @@ data/*.csv
 # Environment variables
 .env
 .env.local
+
+# Temporary Excel lock files
+~$*
