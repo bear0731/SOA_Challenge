@@ -1,0 +1,31 @@
+{
+  "global_feature_importance": {
+    "issue_age": 0.45,
+    "smoker_status": 0.25,
+    "preferred_class": 0.15,
+    "duration": 0.1,
+    "face_amount": 0.03,
+    "plan_type": 0.02
+  },
+  "local_examples": [
+    {
+      "id": "sample_12345",
+      "profile": "Age 75, Smoker",
+      "shap_values": {
+        "issue_age": {
+          "value": 75,
+          "shap": 0.03
+        },
+        "smoker_status": {
+          "value": "Smoker",
+          "shap": 0.015
+        },
+        "preferred_class": {
+          "value": "Standard",
+          "shap": 0.005
+        },
+        "base_value": 0.001
+      }
+    }
+  ]
+}

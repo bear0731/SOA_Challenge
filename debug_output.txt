@@ -1,0 +1,106 @@
+--- DEBUGGING External Knowledge ---
+DEBUG: Checking 2 docs against input {'issue_age': 70, 'smoker_status': 'Non-Smoker'}
+DEBUG: key=doc_covid_impact.md
+DEBUG: Found covid doc. Age=70
+DEBUG: key=doc_preferred_class.md
+
+# TASK
+Explain the predicted mortality rate of **0.011023** for the following policyholder.
+
+# POLICYHOLDER PROFILE
+{
+  "issue_age": 70,
+  "smoker_status": "Non-Smoker"
+}
+
+# RETRIEVED CONTEXT (Specific to this case)
+
+## 1. Risk Segments (Cohorts)
+[]
+
+## 2. External Knowledge (Domain Context)
+[
+  {
+    "source": "doc_covid_impact.md",
+    "content": "# COVID-19 Impact on Mortality (2020-2021)\n    \n## Overview\nDuring the years 2020 and 2021, general population mortality increased significantly due to the COVID-19 pandemic. \n\n## Key Observations for Insured Populations\n*   **Older Age Groups (65+)**: Experienced the highest excess mortality. Relative risk increased by ~25% in peak months.\n*   **Direct vs Indirect**: While direct COVID deaths were high, indirect excess mortality (delayed medical care) was also observed.\n*   **Model Implications**: Historical models trained on pre-2020 data tends to UNDERESTIMATE mortality in these calendar years. A/E ratios > 1.0 are expected.\n    "
+  }
+]
+
+## 3. SHAP Analysis (Drivers)
+{
+  "global_importance": {
+    "issue_age": 0.45,
+    "smoker_status": 0.25,
+    "preferred_class": 0.15,
+    "duration": 0.1,
+    "face_amount": 0.03,
+    "plan_type": 0.02
+  }
+}
+
+# QUESTION
+Why is this rate predicted? Is it reasonable?
+
+
+--- DEBUGGING High Risk ---
+DEBUG: Checking 2 docs against input {'issue_age': 75, 'smoker_status': 'Smoker', 'preferred_class': 'Standard', 'duration': 10}
+DEBUG: key=doc_covid_impact.md
+DEBUG: Found covid doc. Age=75
+DEBUG: key=doc_preferred_class.md
+
+# TASK
+Explain the predicted mortality rate of **0.041112** for the following policyholder.
+
+# POLICYHOLDER PROFILE
+{
+  "issue_age": 75,
+  "smoker_status": "Smoker",
+  "preferred_class": "Standard",
+  "duration": 10
+}
+
+# RETRIEVED CONTEXT (Specific to this case)
+
+## 1. Risk Segments (Cohorts)
+[
+  {
+    "id": "segment_high_risk_elderly",
+    "name": "High Risk: Elderly Smokers",
+    "condition": "issue_age > 65 and smoker_status == 'Smoker'",
+    "ae_ratio": 1.25,
+    "description": "Mortality significantly higher than base expectation (A/E 1.25). Likely influenced by COVID-19 impact in 2020-2021.",
+    "key_drivers": [
+      "issue_age",
+      "smoker_status"
+    ],
+    "avg_mortality": 0.017595307917888565
+  }
+]
+
+## 2. External Knowledge (Domain Context)
+[
+  {
+    "source": "doc_covid_impact.md",
+    "content": "# COVID-19 Impact on Mortality (2020-2021)\n    \n## Overview\nDuring the years 2020 and 2021, general population mortality increased significantly due to the COVID-19 pandemic. \n\n## Key Observations for Insured Populations\n*   **Older Age Groups (65+)**: Experienced the highest excess mortality. Relative risk increased by ~25% in peak months.\n*   **Direct vs Indirect**: While direct COVID deaths were high, indirect excess mortality (delayed medical care) was also observed.\n*   **Model Implications**: Historical models trained on pre-2020 data tends to UNDERESTIMATE mortality in these calendar years. A/E ratios > 1.0 are expected.\n    "
+  },
+  {
+    "source": "doc_preferred_class.md",
+    "content": "# Preferred Class Definitions\n    \n## Classification System\nThe 'Preferred' classification system segments risks based on health markers (BP, Cholesterol, Family History).\n\n*   **Super Pref (Preferred Plus)**: Excellent health, top 10% of applicants. Mortality approx 60% of Standard.\n*   **Classic Pref**: Good health, minor issues allowed. Mortality approx 80% of Standard.\n*   **Standard**: Average health for age/gender. Baseline = 100%.\n*   **Substandard**: Rated risks (e.g., Table A-H) due to medical conditions.\n    "
+  }
+]
+
+## 3. SHAP Analysis (Drivers)
+{
+  "global_importance": {
+    "issue_age": 0.45,
+    "smoker_status": 0.25,
+    "preferred_class": 0.15,
+    "duration": 0.1,
+    "face_amount": 0.03,
+    "plan_type": 0.02
+  }
+}
+
+# QUESTION
+Why is this rate predicted? Is it reasonable?
+

@@ -1,0 +1,26 @@
+..F
+======================================================================
+FAIL: test_system_prompt_eda_injection (__main__.TestQAExplanationSystem.test_system_prompt_eda_injection)
+Test if EDA stats are in the System Prompt.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/BF/Development/SOA/code/verify_qa_system.py", line 44, in test_system_prompt_eda_injection
+    self.assertIn("numerical_features", sys_prompt)
+AssertionError: 'numerical_features' not found in 'You are an expert Actuarial Model Assistant. \nYour goal is to explain mortality model predictions to reviewers.\n\n# GLOBAL DATA CONTEXT (What is "Normal"?)\nUse these statistics to judge if a user\'s values are high or low.\n\n## Numerical Features (Mean / P90)\n{\n  "issue_age": {\n    "mean": 49.822,\n    "median": 50.0,\n    "std": 17.309144307205486,\n    "p90": 74.0,\n    "corr_with_target": 0.08916592357954\n  },\n  "duration": {\n    "mean": 15.1187,\n    "median": 15.0,\n    "std": 8.33909853440032,\n    "p90": 27.0,\n    "corr_with_target": -0.0007121025282287757\n  },\n  "face_amount": {\n    "mean": 495310.38146506384,\n    "median": 344220.9105284198,\n    "std": 492620.7762292811,\n    "p90": 1145790.5229412685,\n    "corr_with_target": -0.002772706073354215\n  }\n}\n\n## Categorical Features (Distribution)\n{\n  "smoker_status": {\n    "distribution": {\n      "Non-Smoker": 0.857,\n      "Smoker": 0.143\n    },\n    "avg_target_by_group": {\n      "Non-Smoker": 0.0039673278879813305,\n      "Smoker": 0.004195804195804196\n    }\n  },\n  "preferred_class": {\n    "distribution": {\n      "Standard": 0.4993,\n      "Substandard": 0.2042,\n      "Classic Pref": 0.1969,\n      "Super Pref": 0.0996\n    },\n    "avg_target_by_group": {\n      "Classic Pref": 0.0035551041137633316,\n      "Standard": 0.0036050470658922492,\n      "Substandard": 0.005876591576885406,\n      "Super Pref": 0.0030120481927710845\n    }\n  },\n  "plan_type": {\n    "distribution": {\n      "Term 20": 0.3351,\n      "Term 10": 0.3346,\n      "Whole Life": 0.3303\n    },\n    "avg_target_by_group": {\n      "Term 10": 0.005678421996413628,\n      "Term 20": 0.003879438973440764,\n      "Whole Life": 0.0024220405691795337\n    }\n  }\n}\n\n# INSTRUCTIONS\n1. Always cite the "Global Data Context" to benchmark the user. (e.g. "Age 75 is well above the p90 of 74").\n2. If the user falls into a "Risk Segment", explain why their risk is High/Low using the provided A/E ratio.\n3. Use the SHAP values to explain the specific drivers of the prediction.\n4. If "External Knowledge" is provided (e.g. COVID), use it to add qualitative context.\n'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (failures=1)
+DEBUG: Checking 2 docs against input {'issue_age': 70, 'smoker_status': 'Non-Smoker'}
+DEBUG: key=doc_covid_impact.md
+DEBUG: Found covid doc. Age=70
+DEBUG: key=doc_preferred_class.md
+DEBUG: Checking 2 docs against input {'issue_age': 75, 'smoker_status': 'Smoker', 'preferred_class': 'Standard', 'duration': 10}
+DEBUG: key=doc_covid_impact.md
+DEBUG: Found covid doc. Age=75
+DEBUG: key=doc_preferred_class.md
+DEBUG: Checking 2 docs against input {'issue_age': 40}
+DEBUG: key=doc_covid_impact.md
+DEBUG: Found covid doc. Age=40
+DEBUG: key=doc_preferred_class.md
