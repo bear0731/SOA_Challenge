@@ -1,0 +1,28 @@
+{
+  "segment_id": "SPOT_048",
+  "leaf_id": 48,
+  "risk_level": "high_risk",
+  "model_status": "calibrated",
+  "rules": [
+    "Attained_Age <= 78.5",
+    "Attained_Age > 69.5",
+    "Smoker_Status <= 0.5",
+    "Duration > 20.5",
+    "Attained_Age > 74.5",
+    "Attained_Age > 77.5"
+  ],
+  "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration > 20.5 AND Attained_Age > 74.5 AND Attained_Age > 77.5",
+  "statistics": {
+    "exposure": 77903,
+    "actual_deaths": 2454,
+    "expected_deaths": 2397.2,
+    "actual_rate": 0.0315,
+    "ae_ratio": 1.024,
+    "relative_risk": 3.259
+  },
+  "credibility": "high",
+  "interpretation": {
+    "risk": "Mortality is 3.26x the population average (225.9% higher).",
+    "model": "Model is calibrated for this segment (A/E=1.02)."
+  }
+}

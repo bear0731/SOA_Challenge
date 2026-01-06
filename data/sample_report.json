@@ -1,0 +1,212 @@
+{
+  "input": {
+    "Attained_Age": 75,
+    "Issue_Age": 55,
+    "Duration": 20,
+    "Sex": "M",
+    "Smoker_Status": "S",
+    "Insurance_Plan": "Term",
+    "Face_Amount_Band": "05: 100,000 - 249,999",
+    "Preferred_Class": "2",
+    "SOA_Post_Lvl_Ind": "NA",
+    "SOA_Antp_Lvl_TP": "N/A (Not Term)",
+    "SOA_Guar_Lvl_TP": "N/A (Not Term)"
+  },
+  "prediction": {
+    "mortality_rate": 0.065,
+    "relative_risk": 6.7,
+    "interpretation": "Significantly higher than population average (6.7x)"
+  },
+  "shap_analysis": {
+    "base_value": 0.0097,
+    "top_drivers": [
+      {
+        "feature": "Attained_Age",
+        "value": 75,
+        "shap_value": 0.0352,
+        "direction": "increases",
+        "interpretation": "significant impact, increases predicted mortality"
+      },
+      {
+        "feature": "Duration",
+        "value": 20,
+        "shap_value": 0.0183,
+        "direction": "increases",
+        "interpretation": "significant impact, increases predicted mortality"
+      },
+      {
+        "feature": "Smoker_Status",
+        "value": "S",
+        "shap_value": 0.0156,
+        "direction": "increases",
+        "interpretation": "significant impact, increases predicted mortality"
+      },
+      {
+        "feature": "Issue_Age",
+        "value": 55,
+        "shap_value": 0.0089,
+        "direction": "increases",
+        "interpretation": "moderate impact, increases predicted mortality"
+      },
+      {
+        "feature": "Face_Amount_Band",
+        "value": "05: 100,000 - 249,999",
+        "shap_value": -0.0023,
+        "direction": "decreases",
+        "interpretation": "moderate impact, decreases predicted mortality"
+      }
+    ]
+  },
+  "population_context": {
+    "percentiles": [
+      {
+        "feature": "Attained_Age",
+        "value": 75,
+        "percentile": 90,
+        "description": "Attained_Age=75 is above average (90th percentile)"
+      },
+      {
+        "feature": "Issue_Age",
+        "value": 55,
+        "percentile": 90,
+        "description": "Issue_Age=55 is above average (90th percentile)"
+      },
+      {
+        "feature": "Duration",
+        "value": 20,
+        "percentile": 90,
+        "description": "Duration=20 is above average (90th percentile)"
+      }
+    ],
+    "categories": [
+      {
+        "feature": "Sex",
+        "value": "M",
+        "population_pct": 53.48,
+        "description": "Sex=M (53.5% of population)"
+      },
+      {
+        "feature": "Smoker_Status",
+        "value": "S",
+        "population_pct": 19.11,
+        "description": "Smoker_Status=S (19.1% of population)"
+      },
+      {
+        "feature": "Insurance_Plan",
+        "value": "Term",
+        "population_pct": 46.0,
+        "description": "Insurance_Plan=Term (46.0% of population)"
+      },
+      {
+        "feature": "Preferred_Class",
+        "value": "2",
+        "population_pct": 8.83,
+        "description": "Preferred_Class=2 (8.8% of population)"
+      }
+    ]
+  },
+  "calibration": {
+    "overall_ae": {
+      "overall_ae": 0.9989,
+      "total_actual_deaths": 4552009,
+      "total_expected_deaths": 4557142.0,
+      "interpretation": "Model is well-calibrated",
+      "data_period": "2009-2019"
+    },
+    "interpretation": "Model is well-calibrated (A/E = 1.00)"
+  },
+  "coverage_segment": {
+    "segment_id": "COV_015",
+    "leaf_id": 15,
+    "rules": [
+      "Duration <= 17.5",
+      "Attained_Age > 48.5",
+      "Duration > 6.5",
+      "Attained_Age > 58.5"
+    ],
+    "rule_text": "Duration <= 17.5 AND Attained_Age > 48.5 AND Duration > 6.5 AND Attained_Age > 58.5",
+    "statistics": {
+      "exposure": 3307358,
+      "actual_deaths": 34260,
+      "expected_deaths": 34406.2,
+      "actual_rate": 0.010359,
+      "ae_ratio": 0.996,
+      "relative_risk": 1.072
+    },
+    "interpretation": {
+      "model": "A/E = 1.00 (calibrated)",
+      "risk": "RR = 1.07 (average risk)"
+    }
+  },
+  "spotlight_alert": {
+    "segment_id": "SPOT_096",
+    "leaf_id": 96,
+    "risk_level": "high_risk",
+    "model_status": "calibrated",
+    "rules": [
+      "Attained_Age > 78.5",
+      "Attained_Age > 84.5",
+      "Insurance_Plan <= 1.5",
+      "Face_Amount_Band <= 1.5",
+      "Attained_Age > 86.5",
+      "Insurance_Plan > 0.5"
+    ],
+    "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band <= 1.5 AND Attained_Age > 86.5 AND Insurance_Plan > 0.5",
+    "statistics": {
+      "exposure": 794880,
+      "actual_deaths": 111207,
+      "expected_deaths": 111798.3,
+      "actual_rate": 0.139904,
+      "ae_ratio": 0.995,
+      "relative_risk": 14.474
+    },
+    "credibility": "high",
+    "interpretation": {
+      "risk": "Mortality is 14.47x the population average (1347.4% higher).",
+      "model": "Model is calibrated for this segment (A/E=0.99)."
+    }
+  },
+  "global_feature_importance": [
+    {
+      "feature": "Attained_Age",
+      "rank": 1,
+      "mean_abs_shap": 0.968715,
+      "pct_contribution": 40.37
+    },
+    {
+      "feature": "Duration",
+      "rank": 2,
+      "mean_abs_shap": 0.32093,
+      "pct_contribution": 13.37
+    },
+    {
+      "feature": "Smoker_Status",
+      "rank": 3,
+      "mean_abs_shap": 0.272664,
+      "pct_contribution": 11.36
+    },
+    {
+      "feature": "Face_Amount_Band",
+      "rank": 4,
+      "mean_abs_shap": 0.218231,
+      "pct_contribution": 9.09
+    },
+    {
+      "feature": "Sex",
+      "rank": 5,
+      "mean_abs_shap": 0.199586,
+      "pct_contribution": 8.32
+    }
+  ],
+  "prompts": {
+    "system": "你是一位精算師助手，負責解釋死亡率預測模型的結果。\n\n## 核心原則\n1. 模型預測的是死亡「率」(rate)，不是「機率」(probability)\n2. 使用關聯性語言 (associated with)，避免因果語言 (causes)\n3. 所有數值解釋必須引用提供的證據\n\n## 指標定義\n- **A/E Ratio**: 實際死亡 / 預期死亡 (模型校準度)\n  - A/E = 1.0: 模型校準良好\n  - A/E > 1.0: 模型低估\n  - A/E < 1.0: 模型高估\n- **Relative Risk (RR)**: 區段死亡率 / 整體平均死亡率 (風險水平)\n  - RR = 1.0: 與整體平均相同\n  - RR > 1.0: 高於平均風險\n  - RR < 1.0: 低於平均風險\n\n## 語言限制\n- ✓ 使用: \"與...相關\", \"模型估計\", \"預期死亡數\"\n- ✗ 避免: \"死亡機率\", \"會死亡\", \"一定\", \"確定\"\n\n## 報告格式\n請依照以下結構產生報告：\n1. 預測摘要\n2. 主要風險因子 (引用 SHAP 值)\n3. 人群比較 (引用百分位)\n4. 模型校準說明 (引用 A/E Ratio)\n5. 專業免責聲明\n\n\n## 數值特徵統計\n{\n  \"Attained_Age\": {\n    \"count\": 45501036,\n    \"mean\": 52.94,\n    \"std\": 17.64,\n    \"min\": 0,\n    \"max\": 120,\n    \"percentiles\": {\n      \"1\": 12.0,\n      \"5\": 24.0,\n      \"10\": 30.0,\n      \"25\": 41.0,\n      \"50\": 53.0,\n      \"75\": 65.0,\n      \"90\": 76.0,\n      \"95\": 83.0,\n      \"99\": 93.0\n    },\n    \"interpretation\": {\n      \"low\": \"Below 41.0 is considered low\",\n      \"typical\": \"Between 41.0 and 65.0 is typical\",\n      \"high\": \"Above 65.0 is considered high\",\n      \"extreme\": \"Above 83.0 is in top 5%\"\n    }\n  },\n  \"Issue_Age\": {\n    \"count\": 45501036,\n    \"mean\": 40.26,\n    \"std\": 16.75,\n    \"min\": 0,\n    \"max\": 100,\n    \"percentiles\": {\n      \"1\": 1.0,\n      \"5\": 11.0,\n      \"10\": 19.0,\n      \"25\": 29.0,\n      \"50\": 40.0,\n      \"75\": 52.0,\n      \"90\": 62.0,\n      \"95\": 68.0,\n      \"99\": 77.0\n    },\n    \"interpretation\": {\n      \"low\": \"Below 29.0 is considered low\",\n      \"typical\": \"Between 29.0 and 52.0 is typical\",\n      \"high\": \"Above 52.0 is considered high\",\n      \"extreme\": \"Above 68.0 is in top 5%\"\n    }\n  },\n  \"Duration\": {\n    \"count\": 45501036,\n    \"mean\": 13.68,\n    \"std\": 10.44,\n    \"min\": 1,\n    \"max\": 119,\n    \"percentiles\": {\n      \"1\": 1.0,\n      \"5\": 2.0,\n      \"10\": 3.0,\n      \"25\": 6.0,\n      \"50\": 12.0,\n      \"75\": 19.0,\n      \"90\": 27.0,\n      \"95\": 32.0,\n      \"99\": 51.0\n    },\n    \"interpretation\": {\n      \"low\": \"Below 6.0 is considered low\",\n      \"typical\": \"Between 6.0 and 19.0 is typical\",\n      \"high\": \"Above 19.0 is considered high\",\n      \"extreme\": \"Above 32.0 is in top 5%\"\n    }\n  }\n}\n\n## 類別特徵分布\n{\n  \"Sex\": {\n    \"total\": 45501036,\n    \"n_unique\": 2,\n    \"most_common\": {\n      \"value\": \"M\",\n      \"percentage\": 53.48\n    },\n    \"distribution\": {\n      \"M\": {\n        \"count\": 24333152,\n        \"percentage\": 53.48\n      },\n      \"F\": {\n        \"count\": 21167884,\n        \"percentage\": 46.52\n      }\n    }\n  },\n  \"Smoker_Status\": {\n    \"total\": 45501036,\n    \"n_unique\": 3,\n    \"most_common\": {\n      \"value\": \"NS\",\n      \"percentage\": 72.25\n    },\n    \"distribution\": {\n      \"NS\": {\n        \"count\": 32872436,\n        \"percentage\": 72.25\n      },\n      \"S\": {\n        \"count\": 8695643,\n        \"percentage\": 19.11\n      },\n      \"U\": {\n        \"count\": 3932957,\n        \"percentage\": 8.64\n      }\n    }\n  },\n  \"Insurance_Plan\": {\n    \"total\": 45501036,\n    \"n_unique\": 7,\n    \"most_common\": {\n      \"value\": \"Term\",\n      \"percentage\": 46.0\n    },\n    \"distribution\": {\n      \"Term\": {\n        \"count\": 20929192,\n        \"percentage\": 46.0\n      },\n      \"Perm\": {\n        \"count\": 7470281,\n        \"percentage\": 16.42\n      },\n      \"UL\": {\n        \"count\": 6075946,\n        \"percentage\": 13.35\n      },\n      \"ULSG\": {\n        \"count\": 4613219,\n        \"percentage\": 10.14\n      },\n      \"VL\": {\n        \"count\": 3120515,\n        \"percentage\": 6.86\n      },\n      \"VLSG\": {\n        \"count\": 2412344,\n        \"percentage\": 5.3\n      },\n      \"Other\": {\n        \"count\": 879539,\n        \"percentage\": 1.93\n      }\n    }\n  },\n  \"Face_Amount_Band\": {\n    \"total\": 45501036,\n    \"n_unique\": 11,\n    \"most_common\": {\n      \"value\": \"05: 100,000 - 249,999\",\n      \"percentage\": 22.24\n    },\n    \"distribution\": {\n      \"05: 100,000 - 249,999\": {\n        \"count\": 10118882,\n        \"percentage\": 22.24\n      },\n      \"06: 250,000 - 499,999\": {\n        \"count\": 7396842,\n        \"percentage\": 16.26\n      },\n      \"04: 50,000 - 99,999\": {\n        \"count\": 6460460,\n        \"percentage\": 14.2\n      },\n      \"07: 500,000 - 999,999\": {\n        \"count\": 5471458,\n        \"percentage\": 12.02\n      },\n      \"03: 25,000 - 49,999\": {\n        \"count\": 4619883,\n        \"percentage\": 10.15\n      },\n      \"08: 1,000,000 - 2,499,999\": {\n        \"count\": 3919912,\n        \"percentage\": 8.61\n      },\n      \"02: 10,000 - 24,999\": {\n        \"count\": 3030835,\n        \"percentage\": 6.66\n      },\n      \"01: 0 - 9,999\": {\n        \"count\": 2269246,\n        \"percentage\": 4.99\n      },\n      \"09: 2,500,000 - 4,999,999\": {\n        \"count\": 1204673,\n        \"percentage\": 2.65\n      },\n      \"10: 5,000,000 - 9,999,999\": {\n        \"count\": 676346,\n        \"percentage\": 1.49\n      },\n      \"11: 10,000,000+\": {\n        \"count\": 332499,\n        \"percentage\": 0.73\n      }\n    }\n  },\n  \"Preferred_Class\": {\n    \"total\": 45501036,\n    \"n_unique\": 10,\n    \"most_common\": {\n      \"value\": \"NA\",\n      \"percentage\": 32.12\n    },\n    \"distribution\": {\n      \"NA\": {\n        \"count\": 14615884,\n        \"percentage\": 32.12\n      },\n      \"2.0\": {\n        \"count\": 7417733,\n        \"percentage\": 16.3\n      },\n      \"1.0\": {\n        \"count\": 7172721,\n        \"percentage\": 15.76\n      },\n      \"2\": {\n        \"count\": 4015772,\n        \"percentage\": 8.83\n      },\n      \"1\": {\n        \"count\": 3792389,\n        \"percentage\": 8.33\n      },\n      \"3.0\": {\n        \"count\": 3538797,\n        \"percentage\": 7.78\n      },\n      \"3\": {\n        \"count\": 1969016,\n        \"percentage\": 4.33\n      },\n      \"4.0\": {\n        \"count\": 1285892,\n        \"percentage\": 2.83\n      },\n      \"4\": {\n        \"count\": 894371,\n        \"percentage\": 1.97\n      },\n      \"U\": {\n        \"count\": 798461,\n        \"percentage\": 1.75\n      }\n    }\n  },\n  \"SOA_Post_Lvl_Ind\": {\n    \"total\": 45501036,\n    \"n_unique\": 5,\n    \"most_common\": {\n      \"value\": \"NA\",\n      \"percentage\": 54.0\n    },\n    \"distribution\": {\n      \"NA\": {\n        \"count\": 24571844,\n        \"percentage\": 54.0\n      },\n      \"WLT\": {\n        \"count\": 13384712,\n        \"percentage\": 29.42\n      },\n      \"ULT\": {\n        \"count\": 3660732,\n        \"percentage\": 8.05\n      },\n      \"PLT\": {\n        \"count\": 3109964,\n        \"percentage\": 6.83\n      },\n      \"NLT\": {\n        \"count\": 773784,\n        \"percentage\": 1.7\n      }\n    }\n  },\n  \"SOA_Antp_Lvl_TP\": {\n    \"total\": 45501036,\n    \"n_unique\": 10,\n    \"most_common\": {\n      \"value\": \"N/A (Not Term)\",\n      \"percentage\": 54.0\n    },\n    \"distribution\": {\n      \"N/A (Not Term)\": {\n        \"count\": 24571844,\n        \"percentage\": 54.0\n      },\n      \"20 yr anticipated\": {\n        \"count\": 5190317,\n        \"percentage\": 11.41\n      },\n      \"Unknown\": {\n        \"count\": 3883107,\n        \"percentage\": 8.53\n      },\n      \"10 yr anticipated\": {\n        \"count\": 3774124,\n        \"percentage\": 8.29\n      },\n      \"15 yr anticipated\": {\n        \"count\": 3114665,\n        \"percentage\": 6.85\n      },\n      \"30 yr anticipated\": {\n        \"count\": 2527808,\n        \"percentage\": 5.56\n      },\n      \" 5 yr anticipated\": {\n        \"count\": 1034572,\n        \"percentage\": 2.27\n      },\n      \"25 yr anticipated\": {\n        \"count\": 853106,\n        \"percentage\": 1.87\n      },\n      \"Not Level Term\": {\n        \"count\": 551409,\n        \"percentage\": 1.21\n      },\n      \"40 yr anticipated\": {\n        \"count\": 84,\n        \"percentage\": 0.0\n      }\n    }\n  },\n  \"SOA_Guar_Lvl_TP\": {\n    \"total\": 45501036,\n    \"n_unique\": 10,\n    \"most_common\": {\n      \"value\": \"N/A (Not Term)\",\n      \"percentage\": 54.0\n    },\n    \"distribution\": {\n      \"N/A (Not Term)\": {\n        \"count\": 24571844,\n        \"percentage\": 54.0\n      },\n      \"20 yr guaranteed\": {\n        \"count\": 4762703,\n        \"percentage\": 10.47\n      },\n      \"10 yr guaranteed\": {\n        \"count\": 4500502,\n        \"percentage\": 9.89\n      },\n      \"Unknown\": {\n        \"count\": 3883107,\n        \"percentage\": 8.53\n      },\n      \"15 yr guaranteed\": {\n        \"count\": 3048389,\n        \"percentage\": 6.7\n      },\n      \"30 yr guaranteed\": {\n        \"count\": 2002577,\n        \"percentage\": 4.4\n      },\n      \" 5 yr guaranteed\": {\n        \"count\": 1550115,\n        \"percentage\": 3.41\n      },\n      \"25 yr guaranteed\": {\n        \"count\": 630306,\n        \"percentage\": 1.39\n      },\n      \"Not Level Term\": {\n        \"count\": 551409,\n        \"percentage\": 1.21\n      },\n      \"40 yr guaranteed\": {\n        \"count\": 84,\n        \"percentage\": 0.0\n      }\n    }\n  }\n}\n\n## 模型校準\n{\n  \"overall_ae\": 0.9989,\n  \"total_actual_deaths\": 4552009,\n  \"total_expected_deaths\": 4557142.0,\n  \"interpretation\": \"Model is well-calibrated\",\n  \"data_period\": \"2009-2019\"\n}\n\n## 全域特徵重要性 (SHAP)\n[\n  {\n    \"feature\": \"Attained_Age\",\n    \"rank\": 1,\n    \"mean_abs_shap\": 0.968715,\n    \"pct_contribution\": 40.37\n  },\n  {\n    \"feature\": \"Duration\",\n    \"rank\": 2,\n    \"mean_abs_shap\": 0.32093,\n    \"pct_contribution\": 13.37\n  },\n  {\n    \"feature\": \"Smoker_Status\",\n    \"rank\": 3,\n    \"mean_abs_shap\": 0.272664,\n    \"pct_contribution\": 11.36\n  },\n  {\n    \"feature\": \"Face_Amount_Band\",\n    \"rank\": 4,\n    \"mean_abs_shap\": 0.218231,\n    \"pct_contribution\": 9.09\n  },\n  {\n    \"feature\": \"Sex\",\n    \"rank\": 5,\n    \"mean_abs_shap\": 0.199586,\n    \"pct_contribution\": 8.32\n  }\n]",
+    "user": "## 查詢資料\n{\n  \"Attained_Age\": 75,\n  \"Issue_Age\": 55,\n  \"Duration\": 20,\n  \"Sex\": \"M\",\n  \"Smoker_Status\": \"S\",\n  \"Insurance_Plan\": \"Term\",\n  \"Face_Amount_Band\": \"05: 100,000 - 249,999\",\n  \"Preferred_Class\": \"2\",\n  \"SOA_Post_Lvl_Ind\": \"NA\",\n  \"SOA_Antp_Lvl_TP\": \"N/A (Not Term)\",\n  \"SOA_Guar_Lvl_TP\": \"N/A (Not Term)\"\n}\n\n## 預測結果\n- 預測死亡率: 0.065000\n- Relative Risk: 6.7x\n- 解讀: Significantly higher than population average (6.7x)\n\n## SHAP 特徵貢獻\n- Attained_Age: 75 → SHAP=+0.0352 (significant impact, increases predicted mortality)\n- Duration: 20 → SHAP=+0.0183 (significant impact, increases predicted mortality)\n- Smoker_Status: S → SHAP=+0.0156 (significant impact, increases predicted mortality)\n- Issue_Age: 55 → SHAP=+0.0089 (moderate impact, increases predicted mortality)\n- Face_Amount_Band: 05: 100,000 - 249,999 → SHAP=-0.0023 (moderate impact, decreases predicted mortality)\n\n## 人群定位\n- Attained_Age=75 is above average (90th percentile)\n- Issue_Age=55 is above average (90th percentile)\n- Duration=20 is above average (90th percentile)\n- Sex=M (53.5% of population)\n- Smoker_Status=S (19.1% of population)\n- Insurance_Plan=Term (46.0% of population)\n- Preferred_Class=2 (8.8% of population)\n\n## 所屬區段 (Coverage)\n- Segment ID: COV_015\n- Rule: Duration <= 17.5 AND Attained_Age > 48.5 AND Duration > 6.5 AND Attained_Age > 58.5\n- A/E Ratio: 0.996\n- Relative Risk: 1.072\n- 風險解讀: RR = 1.07 (average risk)\n- 模型校準: A/E = 1.00 (calibrated)\n\n## ⚠️ 異常區段警示 (Spotlight)\n- Segment ID: SPOT_096\n- Risk Level: high_risk\n- Rule: Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band <= 1.5 AND Attained_Age > 86.5 AND Insurance_Plan > 0.5\n- Relative Risk: 14.474x\n- 風險解讀: Mortality is 14.47x the population average (1347.4% higher).\n\n---\n請根據以上資訊，用繁體中文撰寫一份完整的風險評估報告。\n報告應包含：預測摘要、主要風險因子、人群比較、模型校準說明、以及專業免責聲明。"
+  },
+  "llm_report": "[LLM Error: Connection error.]",
+  "timings": {
+    "init": 0.04068303108215332,
+    "prepare": 1.9073486328125e-06,
+    "structured": 0.0003712177276611328,
+    "llm": 3.8633530139923096
+  }
+}

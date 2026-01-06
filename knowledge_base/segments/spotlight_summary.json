@@ -1,0 +1,446 @@
+{
+  "layer": "B",
+  "name": "Risk Spotlight",
+  "purpose": "Identify segments with significant risk deviation from population",
+  "metrics": {
+    "ae_ratio": "Actual Deaths / Expected Deaths (model calibration)",
+    "relative_risk": "Segment Rate / Overall Rate (risk vs population)"
+  },
+  "rr_threshold": 0.15,
+  "overall_rate": 0.009666,
+  "n_anomalous": 54,
+  "anomalies": [
+    {
+      "segment_id": "SPOT_006",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age <= 51.5 AND Duration <= 19.5 AND Attained_Age <= 45.5",
+      "ae_ratio": 0.991,
+      "relative_risk": 0.049,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_007",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age <= 51.5 AND Duration <= 19.5 AND Attained_Age > 45.5",
+      "ae_ratio": 1.019,
+      "relative_risk": 0.11,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_009",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age <= 51.5 AND Duration > 19.5 AND Attained_Age <= 38.5",
+      "ae_ratio": 0.977,
+      "relative_risk": 0.11,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_010",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age <= 51.5 AND Duration > 19.5 AND Attained_Age > 38.5",
+      "ae_ratio": 0.995,
+      "relative_risk": 0.234,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_013",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age > 51.5 AND Smoker_Status <= 0.5 AND Face_Amount_Band <= 3.5",
+      "ae_ratio": 1.004,
+      "relative_risk": 0.355,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_014",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age > 51.5 AND Smoker_Status <= 0.5 AND Face_Amount_Band > 3.5",
+      "ae_ratio": 1.0,
+      "relative_risk": 0.185,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_016",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age > 51.5 AND Smoker_Status > 0.5 AND Attained_Age <= 56.5",
+      "ae_ratio": 1.002,
+      "relative_risk": 0.558,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_017",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age <= 60.5 AND Attained_Age > 51.5 AND Smoker_Status > 0.5 AND Attained_Age > 56.5",
+      "ae_ratio": 1.004,
+      "relative_risk": 0.743,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_021",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age > 60.5 AND Smoker_Status <= 0.5 AND Duration <= 19.5 AND Face_Amount_Band <= 3.5",
+      "ae_ratio": 1.027,
+      "relative_risk": 0.655,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_022",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age > 60.5 AND Smoker_Status <= 0.5 AND Duration <= 19.5 AND Face_Amount_Band > 3.5",
+      "ae_ratio": 0.993,
+      "relative_risk": 0.369,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_024",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age > 60.5 AND Smoker_Status <= 0.5 AND Duration > 19.5 AND Attained_Age <= 65.5",
+      "ae_ratio": 0.999,
+      "relative_risk": 0.603,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_028",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age > 60.5 AND Smoker_Status > 0.5 AND Attained_Age <= 65.5 AND Duration <= 32.5",
+      "ae_ratio": 0.996,
+      "relative_risk": 1.465,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_031",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age > 60.5 AND Smoker_Status > 0.5 AND Attained_Age > 65.5 AND Duration <= 34.5",
+      "ae_ratio": 0.99,
+      "relative_risk": 2.165,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_032",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age <= 69.5 AND Attained_Age > 60.5 AND Smoker_Status > 0.5 AND Attained_Age > 65.5 AND Duration > 34.5",
+      "ae_ratio": 1.0,
+      "relative_risk": 1.208,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_037",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration <= 20.5 AND Face_Amount_Band <= 2.5 AND Attained_Age <= 74.5",
+      "ae_ratio": 0.998,
+      "relative_risk": 1.371,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_038",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration <= 20.5 AND Face_Amount_Band <= 2.5 AND Attained_Age > 74.5",
+      "ae_ratio": 1.016,
+      "relative_risk": 2.325,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_040",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration <= 20.5 AND Face_Amount_Band > 2.5 AND Duration <= 8.5",
+      "ae_ratio": 0.972,
+      "relative_risk": 0.708,
+      "risk_level": "low_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_041",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration <= 20.5 AND Face_Amount_Band > 2.5 AND Duration > 8.5",
+      "ae_ratio": 0.979,
+      "relative_risk": 1.268,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_044",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration > 20.5 AND Attained_Age <= 74.5 AND Attained_Age <= 72.5",
+      "ae_ratio": 0.994,
+      "relative_risk": 1.386,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_045",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration > 20.5 AND Attained_Age <= 74.5 AND Attained_Age > 72.5",
+      "ae_ratio": 1.015,
+      "relative_risk": 1.89,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_047",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration > 20.5 AND Attained_Age > 74.5 AND Attained_Age <= 77.5",
+      "ae_ratio": 0.997,
+      "relative_risk": 2.467,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_048",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status <= 0.5 AND Duration > 20.5 AND Attained_Age > 74.5 AND Attained_Age > 77.5",
+      "ae_ratio": 1.024,
+      "relative_risk": 3.259,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_052",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age <= 74.5 AND Duration <= 35.5 AND Face_Amount_Band <= 3.5",
+      "ae_ratio": 1.003,
+      "relative_risk": 3.204,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_053",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age <= 74.5 AND Duration <= 35.5 AND Face_Amount_Band > 3.5",
+      "ae_ratio": 0.984,
+      "relative_risk": 3.004,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_055",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age <= 74.5 AND Duration > 35.5 AND Attained_Age <= 71.5",
+      "ae_ratio": 0.995,
+      "relative_risk": 1.599,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_056",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age <= 74.5 AND Duration > 35.5 AND Attained_Age > 71.5",
+      "ae_ratio": 1.007,
+      "relative_risk": 2.13,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_059",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age > 74.5 AND Attained_Age <= 76.5 AND Duration <= 34.5",
+      "ae_ratio": 1.011,
+      "relative_risk": 4.359,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_060",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age > 74.5 AND Attained_Age <= 76.5 AND Duration > 34.5",
+      "ae_ratio": 1.0,
+      "relative_risk": 2.78,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_062",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age > 74.5 AND Attained_Age > 76.5 AND Duration <= 32.5",
+      "ae_ratio": 1.014,
+      "relative_risk": 5.329,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_063",
+      "rule_text": "Attained_Age <= 78.5 AND Attained_Age > 69.5 AND Smoker_Status > 0.5 AND Attained_Age > 74.5 AND Attained_Age > 76.5 AND Duration > 32.5",
+      "ae_ratio": 0.997,
+      "relative_risk": 3.483,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_068",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration <= 18.5 AND Face_Amount_Band <= 1.5",
+      "ae_ratio": 0.97,
+      "relative_risk": 4.216,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_070",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration <= 18.5 AND Face_Amount_Band > 1.5 AND Face_Amount_Band <= 4.5",
+      "ae_ratio": 1.0,
+      "relative_risk": 3.308,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_071",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration <= 18.5 AND Face_Amount_Band > 1.5 AND Face_Amount_Band > 4.5",
+      "ae_ratio": 0.976,
+      "relative_risk": 2.828,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_074",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration > 18.5 AND Attained_Age <= 80.5 AND Face_Amount_Band <= 3.5",
+      "ae_ratio": 0.986,
+      "relative_risk": 3.679,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_075",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration > 18.5 AND Attained_Age <= 80.5 AND Face_Amount_Band > 3.5",
+      "ae_ratio": 1.0,
+      "relative_risk": 3.641,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_077",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration > 18.5 AND Attained_Age > 80.5 AND Face_Amount_Band <= 4.5",
+      "ae_ratio": 0.992,
+      "relative_risk": 5.473,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_078",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status <= 0.5 AND Duration > 18.5 AND Attained_Age > 80.5 AND Face_Amount_Band > 4.5",
+      "ae_ratio": 1.031,
+      "relative_risk": 5.064,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_082",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status > 0.5 AND Attained_Age <= 81.5 AND Attained_Age <= 80.5 AND Insurance_Plan <= 1.5",
+      "ae_ratio": 1.007,
+      "relative_risk": 4.556,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_083",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status > 0.5 AND Attained_Age <= 81.5 AND Attained_Age <= 80.5 AND Insurance_Plan > 1.5",
+      "ae_ratio": 0.983,
+      "relative_risk": 5.63,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_084",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status > 0.5 AND Attained_Age <= 81.5 AND Attained_Age > 80.5",
+      "ae_ratio": 1.001,
+      "relative_risk": 5.48,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_087",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status > 0.5 AND Attained_Age > 81.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band <= 1.5",
+      "ae_ratio": 0.998,
+      "relative_risk": 6.599,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_088",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status > 0.5 AND Attained_Age > 81.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band > 1.5",
+      "ae_ratio": 0.999,
+      "relative_risk": 6.622,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_089",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age <= 84.5 AND Smoker_Status > 0.5 AND Attained_Age > 81.5 AND Insurance_Plan > 1.5",
+      "ae_ratio": 1.007,
+      "relative_risk": 8.169,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_093",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band <= 1.5 AND Attained_Age <= 86.5",
+      "ae_ratio": 0.994,
+      "relative_risk": 8.302,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_095",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band <= 1.5 AND Attained_Age > 86.5 AND Insurance_Plan <= 0.5",
+      "ae_ratio": 1.032,
+      "relative_risk": 9.472,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_096",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band <= 1.5 AND Attained_Age > 86.5 AND Insurance_Plan > 0.5",
+      "ae_ratio": 0.995,
+      "relative_risk": 14.474,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_100",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band > 1.5 AND Duration <= 23.5 AND Duration > 17.5",
+      "ae_ratio": 0.984,
+      "relative_risk": 10.142,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_102",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan <= 1.5 AND Face_Amount_Band > 1.5 AND Duration > 23.5 AND Face_Amount_Band <= 4.5",
+      "ae_ratio": 1.013,
+      "relative_risk": 12.46,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_107",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration <= 21.5 AND Face_Amount_Band <= 4.5 AND Insurance_Plan <= 3.5",
+      "ae_ratio": 0.994,
+      "relative_risk": 10.31,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_108",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration <= 21.5 AND Face_Amount_Band <= 4.5 AND Insurance_Plan > 3.5",
+      "ae_ratio": 1.005,
+      "relative_risk": 8.834,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_110",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration <= 21.5 AND Face_Amount_Band > 4.5 AND Attained_Age <= 87.5",
+      "ae_ratio": 0.93,
+      "relative_risk": 5.36,
+      "risk_level": "high_risk",
+      "model_status": "overestimate"
+    },
+    {
+      "segment_id": "SPOT_111",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration <= 21.5 AND Face_Amount_Band > 4.5 AND Attained_Age > 87.5",
+      "ae_ratio": 1.002,
+      "relative_risk": 11.476,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_114",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration > 21.5 AND Face_Amount_Band <= 4.5 AND Smoker_Status <= 0.5",
+      "ae_ratio": 1.013,
+      "relative_risk": 12.236,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    },
+    {
+      "segment_id": "SPOT_115",
+      "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration > 21.5 AND Face_Amount_Band <= 4.5 AND Smoker_Status > 0.5",
+      "ae_ratio": 0.971,
+      "relative_risk": 12.867,
+      "risk_level": "high_risk",
+      "model_status": "calibrated"
+    }
+  ]
+}

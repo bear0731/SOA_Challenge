@@ -1,0 +1,28 @@
+{
+  "segment_id": "SPOT_108",
+  "leaf_id": 108,
+  "risk_level": "high_risk",
+  "model_status": "calibrated",
+  "rules": [
+    "Attained_Age > 78.5",
+    "Attained_Age > 84.5",
+    "Insurance_Plan > 1.5",
+    "Duration <= 21.5",
+    "Face_Amount_Band <= 4.5",
+    "Insurance_Plan > 3.5"
+  ],
+  "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration <= 21.5 AND Face_Amount_Band <= 4.5 AND Insurance_Plan > 3.5",
+  "statistics": {
+    "exposure": 23327,
+    "actual_deaths": 1992,
+    "expected_deaths": 1982.4,
+    "actual_rate": 0.085391,
+    "ae_ratio": 1.005,
+    "relative_risk": 8.834
+  },
+  "credibility": "medium",
+  "interpretation": {
+    "risk": "Mortality is 8.83x the population average (783.4% higher).",
+    "model": "Model is calibrated for this segment (A/E=1.00)."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "segment_id": "SPOT_035",
+  "leaf_id": 35,
+  "segment_type": "underestimate",
+  "rules": [
+    "Attained_Age > 82.5",
+    "Face_Amount_Band in ['01: 0 - 9,999']",
+    "Attained_Age > 95.5"
+  ],
+  "rule_text": "Attained_Age > 82.5 AND Face_Amount_Band in ['01: 0 - 9,999'] AND Attained_Age > 95.5",
+  "statistics": {
+    "exposure": 50029,
+    "actual_deaths": 11292,
+    "expected_deaths": 11496.8,
+    "ae_ratio": 23.351,
+    "mean_residual": -0.026763
+  },
+  "credibility": "high",
+  "interpretation": "Model underestimates mortality by 2235.1% for this segment.",
+  "recommendation": "Consider applying adjustment factor of 23.35 for this segment."
+}

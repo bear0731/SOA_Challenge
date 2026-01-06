@@ -1,0 +1,381 @@
+{
+  "layer": "A",
+  "name": "Coverage Segments",
+  "purpose": "Baseline risk segments covering entire population",
+  "metrics": {
+    "ae_ratio": "Actual Deaths / Expected Deaths (model calibration)",
+    "relative_risk": "Segment Rate / Overall Rate (risk vs population)"
+  },
+  "overall_rate": 0.009666,
+  "n_segments": 16,
+  "segments": [
+    {
+      "segment_id": "COV_004",
+      "leaf_id": 4,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age <= 48.5",
+        "Insurance_Plan <= 3.5",
+        "Smoker_Status <= 1.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age <= 48.5 AND Insurance_Plan <= 3.5 AND Smoker_Status <= 1.5",
+      "statistics": {
+        "exposure": 11360013,
+        "actual_deaths": 6051,
+        "expected_deaths": 6124.1,
+        "actual_rate": 0.000533,
+        "ae_ratio": 0.988,
+        "relative_risk": 0.055
+      },
+      "interpretation": {
+        "model": "A/E = 0.99 (calibrated)",
+        "risk": "RR = 0.06 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_005",
+      "leaf_id": 5,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age <= 48.5",
+        "Insurance_Plan <= 3.5",
+        "Smoker_Status > 1.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age <= 48.5 AND Insurance_Plan <= 3.5 AND Smoker_Status > 1.5",
+      "statistics": {
+        "exposure": 2200506,
+        "actual_deaths": 915,
+        "expected_deaths": 847.2,
+        "actual_rate": 0.000416,
+        "ae_ratio": 1.08,
+        "relative_risk": 0.043
+      },
+      "interpretation": {
+        "model": "A/E = 1.08 (underestimate)",
+        "risk": "RR = 0.04 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_007",
+      "leaf_id": 7,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age <= 48.5",
+        "Insurance_Plan > 3.5",
+        "Duration <= 13.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age <= 48.5 AND Insurance_Plan > 3.5 AND Duration <= 13.5",
+      "statistics": {
+        "exposure": 1324140,
+        "actual_deaths": 483,
+        "expected_deaths": 517.3,
+        "actual_rate": 0.000365,
+        "ae_ratio": 0.934,
+        "relative_risk": 0.038
+      },
+      "interpretation": {
+        "model": "A/E = 0.93 (overestimate)",
+        "risk": "RR = 0.04 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_008",
+      "leaf_id": 8,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age <= 48.5",
+        "Insurance_Plan > 3.5",
+        "Duration > 13.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age <= 48.5 AND Insurance_Plan > 3.5 AND Duration > 13.5",
+      "statistics": {
+        "exposure": 243976,
+        "actual_deaths": 195,
+        "expected_deaths": 186.0,
+        "actual_rate": 0.000799,
+        "ae_ratio": 1.048,
+        "relative_risk": 0.083
+      },
+      "interpretation": {
+        "model": "A/E = 1.05 (calibrated)",
+        "risk": "RR = 0.08 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_011",
+      "leaf_id": 11,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age > 48.5",
+        "Duration <= 6.5",
+        "Attained_Age <= 61.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age > 48.5 AND Duration <= 6.5 AND Attained_Age <= 61.5",
+      "statistics": {
+        "exposure": 2358814,
+        "actual_deaths": 3391,
+        "expected_deaths": 3433.7,
+        "actual_rate": 0.001438,
+        "ae_ratio": 0.988,
+        "relative_risk": 0.149
+      },
+      "interpretation": {
+        "model": "A/E = 0.99 (calibrated)",
+        "risk": "RR = 0.15 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_012",
+      "leaf_id": 12,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age > 48.5",
+        "Duration <= 6.5",
+        "Attained_Age > 61.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age > 48.5 AND Duration <= 6.5 AND Attained_Age > 61.5",
+      "statistics": {
+        "exposure": 985340,
+        "actual_deaths": 5975,
+        "expected_deaths": 5974.0,
+        "actual_rate": 0.006064,
+        "ae_ratio": 1.0,
+        "relative_risk": 0.627
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 0.63 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_014",
+      "leaf_id": 14,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age > 48.5",
+        "Duration > 6.5",
+        "Attained_Age <= 58.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age > 48.5 AND Duration > 6.5 AND Attained_Age <= 58.5",
+      "statistics": {
+        "exposure": 3843453,
+        "actual_deaths": 7023,
+        "expected_deaths": 6908.0,
+        "actual_rate": 0.001827,
+        "ae_ratio": 1.017,
+        "relative_risk": 0.189
+      },
+      "interpretation": {
+        "model": "A/E = 1.02 (calibrated)",
+        "risk": "RR = 0.19 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_015",
+      "leaf_id": 15,
+      "rules": [
+        "Duration <= 17.5",
+        "Attained_Age > 48.5",
+        "Duration > 6.5",
+        "Attained_Age > 58.5"
+      ],
+      "rule_text": "Duration <= 17.5 AND Attained_Age > 48.5 AND Duration > 6.5 AND Attained_Age > 58.5",
+      "statistics": {
+        "exposure": 3307358,
+        "actual_deaths": 34260,
+        "expected_deaths": 34406.2,
+        "actual_rate": 0.010359,
+        "ae_ratio": 0.996,
+        "relative_risk": 1.072
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 1.07 (average risk)"
+      }
+    },
+    {
+      "segment_id": "COV_019",
+      "leaf_id": 19,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan <= 1.5",
+        "Attained_Age <= 48.5",
+        "Smoker_Status <= 1.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan <= 1.5 AND Attained_Age <= 48.5 AND Smoker_Status <= 1.5",
+      "statistics": {
+        "exposure": 1006317,
+        "actual_deaths": 1403,
+        "expected_deaths": 1402.4,
+        "actual_rate": 0.001394,
+        "ae_ratio": 1.0,
+        "relative_risk": 0.144
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 0.14 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_020",
+      "leaf_id": 20,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan <= 1.5",
+        "Attained_Age <= 48.5",
+        "Smoker_Status > 1.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan <= 1.5 AND Attained_Age <= 48.5 AND Smoker_Status > 1.5",
+      "statistics": {
+        "exposure": 2172359,
+        "actual_deaths": 3288,
+        "expected_deaths": 3379.3,
+        "actual_rate": 0.001514,
+        "ae_ratio": 0.973,
+        "relative_risk": 0.157
+      },
+      "interpretation": {
+        "model": "A/E = 0.97 (calibrated)",
+        "risk": "RR = 0.16 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_022",
+      "leaf_id": 22,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan <= 1.5",
+        "Attained_Age > 48.5",
+        "Insurance_Plan <= 0.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan <= 1.5 AND Attained_Age > 48.5 AND Insurance_Plan <= 0.5",
+      "statistics": {
+        "exposure": 181185,
+        "actual_deaths": 4076,
+        "expected_deaths": 4074.6,
+        "actual_rate": 0.022496,
+        "ae_ratio": 1.0,
+        "relative_risk": 2.327
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 2.33 (higher risk)"
+      }
+    },
+    {
+      "segment_id": "COV_023",
+      "leaf_id": 23,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan <= 1.5",
+        "Attained_Age > 48.5",
+        "Insurance_Plan > 0.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan <= 1.5 AND Attained_Age > 48.5 AND Insurance_Plan > 0.5",
+      "statistics": {
+        "exposure": 10637105,
+        "actual_deaths": 319457,
+        "expected_deaths": 320253.4,
+        "actual_rate": 0.030032,
+        "ae_ratio": 0.998,
+        "relative_risk": 3.107
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 3.11 (higher risk)"
+      }
+    },
+    {
+      "segment_id": "COV_026",
+      "leaf_id": 26,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan > 1.5",
+        "Attained_Age <= 51.5",
+        "Insurance_Plan <= 2.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan > 1.5 AND Attained_Age <= 51.5 AND Insurance_Plan <= 2.5",
+      "statistics": {
+        "exposure": 650639,
+        "actual_deaths": 960,
+        "expected_deaths": 981.4,
+        "actual_rate": 0.001475,
+        "ae_ratio": 0.978,
+        "relative_risk": 0.153
+      },
+      "interpretation": {
+        "model": "A/E = 0.98 (calibrated)",
+        "risk": "RR = 0.15 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_027",
+      "leaf_id": 27,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan > 1.5",
+        "Attained_Age <= 51.5",
+        "Insurance_Plan > 2.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan > 1.5 AND Attained_Age <= 51.5 AND Insurance_Plan > 2.5",
+      "statistics": {
+        "exposure": 1712916,
+        "actual_deaths": 2482,
+        "expected_deaths": 2491.5,
+        "actual_rate": 0.001449,
+        "ae_ratio": 0.996,
+        "relative_risk": 0.15
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 0.15 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_029",
+      "leaf_id": 29,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan > 1.5",
+        "Attained_Age > 51.5",
+        "Insurance_Plan <= 2.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan > 1.5 AND Attained_Age > 51.5 AND Insurance_Plan <= 2.5",
+      "statistics": {
+        "exposure": 1628695,
+        "actual_deaths": 13222,
+        "expected_deaths": 13205.5,
+        "actual_rate": 0.008118,
+        "ae_ratio": 1.001,
+        "relative_risk": 0.84
+      },
+      "interpretation": {
+        "model": "A/E = 1.00 (calibrated)",
+        "risk": "RR = 0.84 (lower risk)"
+      }
+    },
+    {
+      "segment_id": "COV_030",
+      "leaf_id": 30,
+      "rules": [
+        "Duration > 17.5",
+        "Insurance_Plan > 1.5",
+        "Attained_Age > 51.5",
+        "Insurance_Plan > 2.5"
+      ],
+      "rule_text": "Duration > 17.5 AND Insurance_Plan > 1.5 AND Attained_Age > 51.5 AND Insurance_Plan > 2.5",
+      "statistics": {
+        "exposure": 2896162,
+        "actual_deaths": 46368,
+        "expected_deaths": 46136.3,
+        "actual_rate": 0.01601,
+        "ae_ratio": 1.005,
+        "relative_risk": 1.656
+      },
+      "interpretation": {
+        "model": "A/E = 1.01 (calibrated)",
+        "risk": "RR = 1.66 (higher risk)"
+      }
+    }
+  ]
+}

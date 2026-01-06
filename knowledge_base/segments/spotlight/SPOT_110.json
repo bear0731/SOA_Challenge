@@ -1,0 +1,28 @@
+{
+  "segment_id": "SPOT_110",
+  "leaf_id": 110,
+  "risk_level": "high_risk",
+  "model_status": "overestimate",
+  "rules": [
+    "Attained_Age > 78.5",
+    "Attained_Age > 84.5",
+    "Insurance_Plan > 1.5",
+    "Duration <= 21.5",
+    "Face_Amount_Band > 4.5",
+    "Attained_Age <= 87.5"
+  ],
+  "rule_text": "Attained_Age > 78.5 AND Attained_Age > 84.5 AND Insurance_Plan > 1.5 AND Duration <= 21.5 AND Face_Amount_Band > 4.5 AND Attained_Age <= 87.5",
+  "statistics": {
+    "exposure": 12044,
+    "actual_deaths": 624,
+    "expected_deaths": 670.8,
+    "actual_rate": 0.051808,
+    "ae_ratio": 0.93,
+    "relative_risk": 5.36
+  },
+  "credibility": "medium",
+  "interpretation": {
+    "risk": "Mortality is 5.36x the population average (436.0% higher).",
+    "model": "Model overestimates this segment (A/E=0.93)."
+  }
+}
