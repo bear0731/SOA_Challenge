@@ -1,0 +1,173 @@
+{
+  "data": {
+    "report_date": "2026-01-08",
+    "report_version": "1.0",
+    "input_record": {
+      "Attained_Age": 88,
+      "Issue_Age": 56,
+      "Duration": 33,
+      "Sex": "M",
+      "Smoker_Status": "S",
+      "Insurance_Plan": "UL",
+      "Face_Amount_Band": "03: 25,000 - 49,999",
+      "Preferred_Class": "NA",
+      "SOA_Post_Lvl_Ind": "NA",
+      "SOA_Antp_Lvl_TP": "N/A (Not Term)",
+      "SOA_Guar_Lvl_TP": "N/A (Not Term)"
+    },
+    "prediction": {
+      "mortality_rate": 0.05962599011530545,
+      "relative_risk": 6.084579924851059,
+      "overall_death_rate": 0.009799524511425496,
+      "interpretation": "higher"
+    },
+    "shap_contributions": [
+      {
+        "feature": "Attained_Age",
+        "value": 88,
+        "shap_value": 2.8434544555069596,
+        "direction": "Increases"
+      },
+      {
+        "feature": "Duration",
+        "value": 33,
+        "shap_value": 0.5516042038000472,
+        "direction": "Increases"
+      },
+      {
+        "feature": "Issue_Age",
+        "value": 56,
+        "shap_value": 0.2831118383115327,
+        "direction": "Increases"
+      },
+      {
+        "feature": "Insurance_Plan",
+        "value": "UL",
+        "shap_value": -0.24266273412807526,
+        "direction": "Decreases"
+      },
+      {
+        "feature": "Face_Amount_Band",
+        "value": "03: 25,000 - 49,999",
+        "shap_value": 0.20651667081717975,
+        "direction": "Increases"
+      }
+    ],
+    "percentile_context": [
+      {
+        "feature": "Attained_Age",
+        "value": 88,
+        "percentile": 97,
+        "description": "Attained_Age=88 is at the 97th percentile"
+      },
+      {
+        "feature": "Issue_Age",
+        "value": 56,
+        "percentile": 80,
+        "description": "Issue_Age=56 is at the 80th percentile"
+      },
+      {
+        "feature": "Duration",
+        "value": 33,
+        "percentile": 95,
+        "description": "Duration=33 is at the 95th percentile"
+      }
+    ],
+    "category_context": [
+      {
+        "feature": "Sex",
+        "value": "M",
+        "population_pct": 53.5,
+        "description": "Sex=M (53.5% of population)"
+      },
+      {
+        "feature": "Smoker_Status",
+        "value": "S",
+        "population_pct": 19.1,
+        "description": "Smoker_Status=S (19.1% of population)"
+      },
+      {
+        "feature": "Insurance_Plan",
+        "value": "UL",
+        "population_pct": 13.4,
+        "description": "Insurance_Plan=UL (13.4% of population)"
+      }
+    ],
+    "coverage_segment": {
+      "segment_id": "COV_023",
+      "rule_text": "Duration > 17.5 AND Insurance_Plan <= 1.5 AND Attained_Age > 48.5 AND Insurance_Plan > 0.5",
+      "ae_ratio": 0.998,
+      "relative_risk": 3.107,
+      "credibility": "high",
+      "risk_level": null
+    },
+    "spotlight_segment": {
+      "segment_id": "SPOT_HIGH_060",
+      "rule_text": "Attained_Age=88 AND Smoker_Status=S",
+      "ae_ratio": 1.0,
+      "relative_risk": 6.084579924851059,
+      "credibility": "model_derived",
+      "risk_level": "high_risk"
+    },
+    "overall_ae": 0.9989,
+    "yearly_ae": null,
+    "evidence_charts": [
+      {
+        "name": "SHAP Waterfall",
+        "path": "shap_waterfall.png",
+        "description": "Feature contributions to prediction"
+      }
+    ],
+    "disclaimers": [
+      "This prediction is based on historical data from 2012-2019 and is for reference only.",
+      "This model does not include COVID-19 period data; post-2020 predictions require adjustment.",
+      "This report complies with ASOP 23/25/41/56 standards."
+    ]
+  },
+  "insights": {
+    "summary": "The model predicts a mortality rate of 0.059626, which is 6.08x higher than the overall average. The primary risk factors are advanced attained age and long policy duration, with the individual belonging to a high-risk spotlight segment.",
+    "risk_interpretation": "The predicted mortality rate is 0.059626, which is significantly elevated at 6.08x the overall average mortality rate of 0.009800. This indicates a substantially higher risk profile compared to the general insured population.",
+    "shap_explanations": [
+      {
+        "feature": "Attained_Age",
+        "value": "88",
+        "direction": "Increases",
+        "explanation": "An attained age of 88, at the 97th percentile, is associated with a significant increase in mortality risk, contributing +2.8435 to the SHAP value."
+      },
+      {
+        "feature": "Duration",
+        "value": "33",
+        "direction": "Increases",
+        "explanation": "A policy duration of 33 years, at the 95th percentile, is associated with increased mortality risk, contributing +0.5516 to the SHAP value, reflecting the long-tail uncertainty of older policies."
+      },
+      {
+        "feature": "Issue_Age",
+        "value": "56",
+        "direction": "Increases",
+        "explanation": "An issue age of 56, at the 80th percentile, is associated with increased mortality risk, contributing +0.2831 to the SHAP value. This should be interpreted in conjunction with attained age and duration."
+      },
+      {
+        "feature": "Insurance_Plan",
+        "value": "UL",
+        "direction": "Decreases",
+        "explanation": "The UL insurance plan is associated with a decrease in mortality risk, contributing -0.2427 to the SHAP value, potentially reflecting product-specific risk profiles."
+      },
+      {
+        "feature": "Face_Amount_Band",
+        "value": "03: 25,000 - 49,999",
+        "direction": "Increases",
+        "explanation": "A face amount band of 25,000 - 49,999 is associated with a slight increase in mortality risk, contributing +0.2065 to the SHAP value."
+      }
+    ],
+    "calibration_note": "The overall A/E ratio is 0.9989, indicating that the model is well-calibrated on the training data, with actual deaths closely aligning with expected deaths.",
+    "segment_insight": "This individual belongs to the SPOT_HIGH_060 segment, indicating a statistically anomalous high-risk group. Further analysis is needed to understand the specific factors contributing to the elevated risk within this segment.",
+    "recommendations": [
+      "Due to the advanced attained age and long policy duration, consider a review of the policy's underwriting and risk assessment.",
+      "The high relative risk suggests the need for enhanced monitoring and potential adjustments to reserves.",
+      "Given the individual's membership in a high-risk spotlight segment, further investigation into the specific characteristics driving this elevated risk is warranted."
+    ]
+  },
+  "system_prompt": "# Actuarial Mortality Analysis System\n\nYou are an actuarial assistant generating mortality analysis reports compliant with ASOP standards.\n\n## Core Principles\n1. Model predicts **mortality RATE** (expected deaths per exposure), NOT probability\n2. Use **associative language** (e.g., \"associated with\"), avoid causal claims\n3. All values must **cite evidence sources** from the data\n4. Reports must comply with **ASOP 23/25/41/56** standards\n\n## Response Format\n- Respond in ENGLISH only\n- Use precise numeric formatting (see below)\n- Generate structured JSON matching ActuarialInsights schema\n\n## Numeric Formatting\n- Mortality rate: 6 decimal places (0.009666)\n- A/E Ratio: 2-4 decimal places (0.9989)\n- SHAP value: signed, 4 decimal places (+0.0352)\n- Percentile: ordinal format (90th percentile)\n- Relative Risk: 2 decimals + 'x' suffix (6.08x)\n\n\n---\n## Model Specification\n\n**Model**: {'algorithm': 'LightGBM', 'objective': 'poisson', 'offset': 'log(Policies_Exposed)', 'formula': 'log(E[Death_Count]) = log(Exposure) + f(X)'}\n**Purpose**: {'intended_use': 'Individual life mortality experience analysis and prediction', 'scope': 'ILEC dataset (2012-2019) mortality rate estimation', 'not_intended_for': ['Regulatory capital calculation (Solvency II/RBC)', 'IFRS 17 best estimate without additional review', 'COVID-19 period prediction without adjustment']}\n**Training Period**: 2009-2019\n\n### Limitations\n- data_constraints\n- model_constraints\n- dependencies\n\n### ASOP Compliance\n- asop_23\n- asop_41\n- asop_56\n\n\n---\n## Data Distribution (EDA)\n\n### Numerical Features\n\n**Attained_Age**:\n- Mean: 52.94, Std: 17.64\n- Range: [0, 120]\n- Interpretation: Between 41.0 and 65.0 is typical\n- Extreme: Above 83.0 is in top 5%\n\n**Issue_Age**:\n- Mean: 40.26, Std: 16.75\n- Range: [0, 100]\n- Interpretation: Between 29.0 and 52.0 is typical\n- Extreme: Above 68.0 is in top 5%\n\n**Duration**:\n- Mean: 13.68, Std: 10.44\n- Range: [1, 119]\n- Interpretation: Between 6.0 and 19.0 is typical\n- Extreme: Above 32.0 is in top 5%\n\n### Categorical Features\n\n---\n## Model Calibration\n\n**Overall A/E Ratio**: 0.9989\n- Total Actual Deaths: 4,552,009\n- Total Expected Deaths: 4,557,142\n- Interpretation: Model is well-calibrated\n- Data Period: 2009-2019\n\n### Yearly A/E Trend\n- by_year: {'2012': {'ae_ratio': 0.9906, 'actual_deaths': 537286, 'expected_deaths': 542358.0}, '2013': {'ae_ratio': 0.9949, 'actual_deaths': 554199, 'expected_deaths': 557019.0}, '2014': {'ae_ratio': 0.9963, 'actual_deaths': 560393, 'expected_deaths': 562487.0}, '2015': {'ae_ratio': 1.0085, 'actual_deaths': 565853, 'expected_deaths': 561111.0}, '2016': {'ae_ratio': 0.9881, 'actual_deaths': 552127, 'expected_deaths': 558768.0}, '2017': {'ae_ratio': 1.0061, 'actual_deaths': 558579, 'expected_deaths': 555209.0}, '2018': {'ae_ratio': 1.0169, 'actual_deaths': 624284, 'expected_deaths': 613935.0}, '2019': {'ae_ratio': 0.9885, 'actual_deaths': 599288, 'expected_deaths': 606254.0}}\n- year_factors: {'2012': 0.9736, '2013': 0.9825, '2014': 1.0036, '2015': 0.9953, '2016': 0.9846, '2017': 1.0082, '2018': 1.0041, '2019': 0.9859}\n\n---\n## Feature Importance (SHAP)\n\nGlobal feature importance ranking:\n1. sample_size: 455010.0000\n2. base_value: -6.0453\n3. description\n4. base_value_interpretation\n5. feature_importance\n\n---\n## Key EDA Insights\n\nINSIGHT 1 — 年齡是非線性風險主因，60 歲後進入加速區間\n\nType: age_effect\nStatement:\n\nMortality risk increases non-linearly with attained age, with a pronounced acceleration after approximately age 60. Individuals above age 83 (top 5%) represent an extreme-risk tail relative to the overall population.\n\nEvidence:\n\nMedian age ≈ 53\n\n75th percentile = 65\n\n95th percentile = 83\n\nLong right tail up to age 120\n\nImplication for explanation:\n\n對高齡個案，模型給出高風險屬於「結構性風險」，不是異常\n\n83 歲應搭配「高齡尾端不確定性」提示\n\nINSIGHT 2 — Duration 呈現明顯長尾，長期保單是風險與不確定性的交會區\n\nType: duration_effect\nStatement:\n\nPolicy duration exhibits a strong right-skewed distribution. Policies beyond duration 32 years (top 5%) form a long-tail segment where selection effects have largely dissipated and model uncertainty increases.\n\nEvidence:\n\nMedian duration = 12\n\n90th percentile = 27\n\n95th percentile = 32\n\nMax = 119\n\nImplication for explanation:\n\n長 duration ≠ 單純「老保單」，而是「選擇效應消失後的真實風險區」\n\nDuration >30 應提示「模型校準與資料支撐度需特別注意」\n\nINSIGHT 3 — Issue Age 與 Attained Age 必須聯合解釋，單獨看會誤導\n\nType: age_consistency\nStatement:\n\nIssue age alone is insufficient to characterize risk. Its interpretation depends critically on duration and attained age, and inconsistent combinations may indicate data or cohort structure effects rather than true individual risk.\n\nEvidence:\n\nIssue_Age median = 40\n\nAttained_Age ≈ Issue_Age + Duration（結構關係）\n\nImplication for explanation:\n\nLLM 解釋時應避免「因為投保年齡高所以風險高」的單因果說法\n\n高 Issue_Age + 短 Duration ≠ 高 Attained_Age\n\nINSIGHT 4 — Missing 並非隨機：Preferred_Class 的 NA 是一個主要族群\n\nType: missing_as_signal\nStatement:\n\nPreferred_Class has a dominant NA category (~32%), indicating that missingness reflects structural or programmatic differences rather than random data absence.\n\nEvidence:\n\nNA = 32.12%（單一最大類別）\n\n多個等級同時存在 1 / 1.0、2 / 2.0（來源或編碼差異）\n\nImplication for explanation:\n\nNA 不應被描述為「一般風險」\n\n涉及 Preferred_Class 的解釋應說明「未納入偏好體系或不適用」\n\nINSIGHT 5 — Smoker_Status 的 Unknown 具 proxy 性質，不可忽略\n\nType: proxy_risk\nStatement:\n\nApproximately 8–9% of records have unknown smoking status, suggesting a proxy for data source, product type, or underwriting regime rather than random missingness.\n\nEvidence:\n\nSmoker = 19.1%\n\nNon-smoker = 72.3%\n\nUnknown = 8.6%\n\nImplication for explanation:\n\nUnknown ≠ Non-smoker\n\n若 SHAP 對 Unknown 有顯著貢獻，應提示其「間接風險指標」性質\n\nINSIGHT 6 — 商品型態高度不均，整體結論主要由 Term 驅動\n\nType: product_mix_bias\nStatement:\n\nNearly half of the dataset consists of Term products, implying that population-level conclusions primarily reflect Term behavior and may not generalize to Permanent or Variable products.\n\nEvidence:\n\nTerm ≈ 46%\n\nLargest non-Term ≈ 16%\n\nImplication for explanation:\n\n解釋非 Term 個案時，需優先引用「同產品 segment」而非整體平均\n\n避免用「整體趨勢」套用到小眾產品\n\nINSIGHT 7 — 高保額族群極度稀有，解釋必須伴隨支撐度聲明\n\nType: rare_segment\nStatement:\n\nHigh face amount policies (≥5M) constitute a very small fraction of the data (<2.5%), indicating that model explanations for such cases rely on limited empirical support.\n\nEvidence:\n\n5M–10M ≈ 1.49%\n\n≥10M ≈ 0.73%\n\nImplication for explanation:\n\n高保額個案需附加「低樣本支撐」或「不確定性較高」說明\n\n避免過度解讀單筆 SHAP\n\nINSIGHT 8 — Level Term 結構資訊高度不完整，NA 本身即為狀態\n\nType: structural_indicator\nStatement:\n\nOver half of the records are marked as N/A for level term indicators, implying that these variables primarily encode product structure applicability rather than missing data.\n\nEvidence:\n\nSOA_Post_Lvl_Ind NA ≈ 54%\n\nAnticipated / Guaranteed TP N/A ≈ 54%\n\nImplication for explanation:\n\n解釋 WLT / PLT / ULT 時，需明示「僅適用於 level term 產品」\n\nNA 應被視為「非 level term 狀態」\n\nINSIGHT 9 — 極端類別（如 40-year term）不具可泛化性\n\nType: low_credibility\nStatement:\n\nCertain categorical levels (e.g., 40-year term periods) are extremely rare and should not be interpreted as stable risk patterns.\n\nEvidence:\n\n40-year term count < 100\n\nImplication for explanation:\n\n觸發低可信度 disclaimer\n\n若模型對其給出極端預測，應標示為「資料支撐不足」\n\nINSIGHT 10 — 整體資料呈現「結構風險 + 長尾不確定性」的典型壽險樣態\n\nType: global_structure\nStatement:\n\nThe dataset reflects a typical life insurance risk structure: strong age and duration effects dominate central predictions, while long-tail segments (very old ages, long durations, high face amounts) contribute disproportionally to uncertainty.\n\nImplication for explanation:\n\n大多數預測屬於「穩定結構性風險」\n\n少數極端輸入應優先解釋「不確定性」而非「確定風險」\n\n\n---\n## Risk Segmentation\n\n### Coverage Segments\n- Total segments: 16\n- Purpose: Baseline risk segments covering entire population\n- Overall mortality rate: 0.009666\n\n\n### Spotlight Segments (Anomalies)\n- Total anomaly segments: 61\n- Purpose: Identify statistically anomalous high/low risk groups\n\n\n---\n## Methodology Overview\n\n# Methodology README\n\nThis directory contains ASOP-compliant documentation for the mortality prediction model.\n\n## Contents\n\n| Document | ASOP Reference | Description |\n|:---------|:---------------|:------------|\n| [data_specification.md](data_specification.md) | ASOP 23 | Data source, quality, and exposure calculation |\n| [model_specification.md](model_specification.md) | ASOP 56 | Model architecture, parameters, and rationale |\n| [validation_framework.md](validation_framework.md) | ASOP 56 | V...\n\n\n---\n## Key Metrics Reference\n\n| Metric | Formula | Interpretation |\n|:-------|:--------|:---------------|\n| A/E Ratio | Actual Deaths / Expected Deaths | =1.0: calibrated, >1.0: underestimate, <1.0: overestimate |\n| Relative Risk (RR) | Segment Rate / Overall Rate | =1.0: average, >1.0: higher risk, <1.0: lower risk |\n| Credibility | Based on exposure size | High: >50K, Medium: 10-50K, Low: <10K |\n| SHAP Value | Feature contribution to prediction | +: increases mortality, -: decreases mortality |\n\n## Language Guidelines\n✓ Use: \"associated with\", \"model estimates\", \"expected deaths\", \"based on historical data\"\n✗ Avoid: \"death probability\", \"will die\", \"definitely\", \"certainly\", \"causes\"\n",
+  "is_validated": true,
+  "validation_notes": []
+}

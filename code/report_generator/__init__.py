@@ -17,37 +17,34 @@ from .knowledge import KnowledgeBase, get_knowledge_base
 from .matcher import SegmentMatcher, create_matcher
 from .predictor import MortalityPredictor, create_predictor
 from .llm import LLMClient, create_llm_client
-from .generator import ReportGenerator, create_generator
-from .validator import ReportValidator, validator
-from .prompts import SYSTEM_BASE, REPORT_STRUCTURE, DISCLAIMERS
+from .renderer import ReportRenderer, create_renderer
+from .prompt_builder import get_full_system_prompt, build_system_prompt
+
+# Import schemas (optional pydantic)
+from .schemas import (
+    ActuarialInsights, ReportData, FullReport,
+    PredictionData, SegmentData,
+    HAS_PYDANTIC
+)
 
 __all__ = [
     # Config
-    'KNOWLEDGE_BASE_DIR',
-    'FEATURES',
-    'CATEGORICAL_FEATURES', 
-    'NUMERICAL_FEATURES',
-    'REPORT_CONFIG',
+    'KNOWLEDGE_BASE_DIR', 'FEATURES', 'CATEGORICAL_FEATURES', 
+    'NUMERICAL_FEATURES', 'REPORT_CONFIG',
     # Knowledge
-    'KnowledgeBase',
-    'get_knowledge_base',
+    'KnowledgeBase', 'get_knowledge_base',
     # Matcher
-    'SegmentMatcher',
-    'create_matcher',
+    'SegmentMatcher', 'create_matcher',
     # Predictor
-    'MortalityPredictor',
-    'create_predictor',
+    'MortalityPredictor', 'create_predictor',
     # LLM
-    'LLMClient',
-    'create_llm_client',
-    # Generator
-    'ReportGenerator',
-    'create_generator',
-    # Validator
-    'ReportValidator',
-    'validator',
-    # Prompts
-    'SYSTEM_BASE',
-    'REPORT_STRUCTURE',
-    'DISCLAIMERS',
+    'LLMClient', 'create_llm_client',
+    # Renderer
+    'ReportRenderer', 'create_renderer',
+    # Prompt
+    'get_full_system_prompt', 'build_system_prompt',
+    # Schemas
+    'ActuarialInsights', 'ReportData', 'FullReport',
+    'PredictionData', 'SegmentData',
+    'HAS_PYDANTIC',
 ]

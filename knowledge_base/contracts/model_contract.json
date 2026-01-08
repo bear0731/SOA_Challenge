@@ -2,6 +2,31 @@
   "model_name": "LGBM Offset Poisson Mortality Model",
   "version": "1.0",
   "created_date": "2026-01",
+  "purpose": {
+    "intended_use": "Individual life mortality experience analysis and prediction",
+    "scope": "ILEC dataset (2012-2019) mortality rate estimation",
+    "not_intended_for": [
+      "Regulatory capital calculation (Solvency II/RBC)",
+      "IFRS 17 best estimate without additional review",
+      "COVID-19 period prediction without adjustment"
+    ]
+  },
+  "limitations": {
+    "data_constraints": [
+      "Training data limited to 2012-2019",
+      "U.S. individual life insurance only",
+      "Aggregated cells, not individual policies"
+    ],
+    "model_constraints": [
+      "Extrapolation beyond age 95 not reliable",
+      "COVID-19 impact not modeled",
+      "Assumes stable mortality trends"
+    ],
+    "dependencies": [
+      "SOA ILEC dataset quality",
+      "Year factor adjustments for temporal effects"
+    ]
+  },
   "observation_unit": {
     "definition": "policy-year-cell",
     "description": "Each row represents a unique combination of policy characteristics observed during a calendar year",
@@ -45,5 +70,16 @@
     "stage_1": "LGBM predicts base mortality rate (year-agnostic)",
     "stage_2": "Year factors adjust for temporal trends",
     "year_factors_file": "models/year_factors_offset.csv"
+  },
+  "asop_compliance": {
+    "asop_23": "Data specification in methodology/data_specification.md",
+    "asop_41": "Report structure follows actuarial communication standards",
+    "asop_56": "Model specification in methodology/model_specification.md"
+  },
+  "governance": {
+    "model_owner": "Actuarial Team",
+    "last_review": "2026-01-08",
+    "next_review": "2026-07-08",
+    "peer_review_status": "Pending"
   }
 }
